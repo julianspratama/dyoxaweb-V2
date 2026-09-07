@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: dyoxa-web:latest
+    container_name: dyoxa-web
+    ports:
+      - "82:80"   # host port 82 -> container nginx port 80
+    restart: unless-stopped
