@@ -1,0 +1,729 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dyoxa Tech - Studi Kasus Aplikasi PPOB Skala Nasional</title>
+<link rel="icon" type="image/jpeg" href="../Dyoxa%20logo.jpeg">
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#0e0e12',
+            cyberDarker: '#0a0a0d',
+            surfaceCard: '#181920',
+            surfaceElevated: '#1a1b24',
+            cyberCyan: '#06b6d4',
+            neonViolet: '#8b5cf6',
+            neonPurple: '#a855f7',
+            emeraldSuccess: '#10b981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for Cyberpunk / Fintech Aesthetic -->
+<style data-purpose="custom-glows">
+    .glow-border-cyan {
+      box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.15);
+    }
+    .glow-border-cyan:hover {
+      box-shadow: 0 0 25px -1px rgba(6, 182, 212, 0.35);
+      border-color: rgba(6, 182, 212, 0.5);
+    }
+    .glow-border-violet:hover {
+      box-shadow: 0 0 25px -1px rgba(139, 92, 246, 0.35);
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+    .text-gradient-cyan-violet {
+      background: linear-gradient(135deg, #06b6d4 0%, #38bdf8 40%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#0e0e12] text-slate-300 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+<!-- BEGIN: TopNavigationBar -->
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0e0e12]/85 border-b border-white/10" data-purpose="top-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Back Link & Main Brand Logo -->
+<div class="flex items-center gap-5">
+<a class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors py-1.5 px-3 rounded-lg border border-white/10 hover:border-cyan-500/40 bg-white/[0.02]" href="../dyoxa_tech_software_house_digital_agency/code.html#portofolio">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Kembali ke Portofolio
+        </a>
+<div class="h-6 w-px bg-white/10 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20 overflow-hidden"><div class="w-full h-full bg-[#0e0e12] rounded-[10px] flex items-center justify-center overflow-hidden p-1"><img src="../Dyoxa%20logo.jpeg" alt="Dyoxa Tech Logo" class="w-full h-full object-contain"></div></div>
+<div class="flex flex-col">
+<span class="font-display font-bold text-white tracking-wide text-base leading-none">Dyoxa Tech</span>
+<span class="text-[9px] font-mono tracking-widest text-slate-400 uppercase mt-0.5">High-Performance FinTech</span>
+</div>
+<span class="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-cyan-950/60 text-cyan-400 border border-cyan-500/30">
+            CASE STUDY: PPOB &amp; FINTECH SWITCH
+          </span>
+</div>
+</div>
+<!-- Navigation Links & CTA -->
+<div class="flex items-center gap-4 lg:gap-6">
+<nav class="hidden lg:flex items-center gap-6 text-xs font-mono tracking-wide text-slate-400">
+<a class="hover:text-cyan-400 transition-colors" href="#overview">Beranda</a>
+<a class="text-white hover:text-cyan-400 transition-colors" href="#challenge">Studi Kasus</a>
+<a class="hover:text-cyan-400 transition-colors" href="#architecture">Arsitektur</a>
+<a class="hover:text-cyan-400 transition-colors" href="#techstack">Stack</a>
+<a class="hover:text-cyan-400 transition-colors" href="#contact">Kontak</a>
+</nav>
+<a class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs font-semibold font-mono uppercase tracking-wider text-black bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-500 hover:opacity-90 shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5" href="#contact">
+          Konsultasi Solusi PPOB
+        </a>
+</div>
+</div>
+</header>
+<!-- END: TopNavigationBar -->
+<main>
+<!-- BEGIN: HeroOverviewSection -->
+<section class="relative pt-12 pb-16 overflow-hidden bg-grid-pattern" data-purpose="hero-project-overview" id="overview">
+<!-- Ambient Glow Behind Hero -->
+<div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-cyan-500/10 via-purple-600/10 to-transparent blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+<!-- Category Pill Tag -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-mono tracking-wider mb-6">
+<span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          FINTECH • DIGITAL UTILITIES • MULTI-BILLER SWITCH • HIGH CONCURRENCY ENGINE
+        </div>
+<!-- Main Title & Subtitle -->
+<h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white max-w-5xl leading-tight sm:leading-tight lg:leading-[1.15]">
+          Aplikasi PPOB Skala Nasional: <span class="text-gradient-cyan-violet">Arsitektur Switching Transaksi Multi-Biller Berkecepatan Sub-Detik</span>
+</h1>
+<p class="mt-6 text-base sm:text-lg text-slate-400 max-w-4xl leading-relaxed font-sans">
+          Modernisasi infrastruktur agregator pembayaran utilitas &amp; produk digital nasional (PLN, PDAM, BPJS, Pulsa/Data, E-Wallet) yang memproses jutaan transaksi harian dengan keandalan 99.999% dan rekonsiliasi kas instan tanpa jeda.
+        </p>
+<!-- 4 Key Metadata Cards -->
+<div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4" data-purpose="project-metadata-grid">
+<!-- Klien -->
+<div class="p-4 rounded-xl bg-[#181920]/80 border border-white/10 backdrop-blur-sm">
+<span class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Klien</span>
+<p class="text-xs sm:text-sm font-semibold text-white">FinTech &amp; Biller Aggregator Nasional</p>
+<span class="text-[11px] text-cyan-400 font-mono">Jakarta, Indonesia</span>
+</div>
+<!-- Durasi Pengerjaan -->
+<div class="p-4 rounded-xl bg-[#181920]/80 border border-white/10 backdrop-blur-sm">
+<span class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Durasi Pengerjaan</span>
+<p class="text-xs sm:text-sm font-semibold text-cyan-400">3.5 Bulan</p>
+<span class="text-[11px] text-slate-400 font-mono">Core Engine to Nationwide Rollout</span>
+</div>
+<!-- Layanan Utama -->
+<div class="p-4 rounded-xl bg-[#181920]/80 border border-white/10 backdrop-blur-sm">
+<span class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Layanan Utama</span>
+<p class="text-xs sm:text-sm font-semibold text-white">High-Throughput Switch</p>
+<span class="text-[11px] text-slate-400 font-mono">Multi-Biller Routing, Real-Time Ledger</span>
+</div>
+<!-- Platform Target -->
+<div class="p-4 rounded-xl bg-[#181920]/80 border border-white/10 backdrop-blur-sm">
+<span class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Platform Target</span>
+<p class="text-xs sm:text-sm font-semibold text-purple-400">Android, iOS &amp; Core API</p>
+<span class="text-[11px] text-slate-400 font-mono">REST Gateway, ISO 8583 Adapter</span>
+</div>
+</div>
+<!-- Hero Primary Image Showcase Container -->
+<div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-[#121318] shadow-2xl relative" data-purpose="hero-image-container">
+<!-- Top Cyber Status Bar -->
+<div class="px-4 py-2.5 bg-[#181920] border-b border-white/10 flex items-center justify-between text-xs font-mono">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-slate-300 font-semibold">LIVE PRODUCTION SWITCH: CLUSTER-JKT-01</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 text-[11px]">
+<span class="">TPH: 14.820/s</span>
+<span class="text-emeraldSuccess">Health: 100% OK</span>
+</div>
+</div>
+<!-- Provided Primary Showcase Image -->
+<div class="relative w-full aspect-[16/9] max-h-[580px] bg-black">
+<img alt="Modern PPOB and digital payment mobile application mockup displayed on two premium smartphones" class="w-full h-full object-cover object-center" loading="eager" src="https://lh3.googleusercontent.com/aida/AEtjO1VjY0n9xnSHQGh5vqXhiuwF2-TduGXwILw9tGyt-vqdctZJZUrYPzlVeubfOcQdGAOWFuEtMdd_g7xdm_BBlr8mcD5EzCuVbHZ8l66aGg3k3cOPk5JILW8r_VHlvEgeG9efhA5RCCUElNkLqdAkJ2pOno8C2cppSpBlPMuH2oKYz5HReIdqgRuP7_JwglNjNwSg602wWNos7tXmszcVJGwLPYnHyajVauBNZ9tvid45M7Gr16YKg1nVRho_">
+</div>
+<!-- Bottom Metric & Architecture Bar -->
+<div class="px-5 py-4 bg-[#181920] border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-medium">
+                PPOB SWITCH ENGINE v4.2
+              </span>
+<span class="text-xs text-slate-300 font-mono">Real-time ISO 8583 &amp; JSON Switching Adapter</span>
+</div>
+<div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+<span class="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-slate-300">
+                ⚡ Latensi Rerata: <strong class="text-cyan-400">420ms</strong>
+</span>
+<span class="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-slate-300">
+                🟢 Uptime: <strong class="text-emerald-400">99.999% SLA</strong>
+</span>
+<span class="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-slate-300">
+                🔒 Enkripsi: <strong class="text-purple-400">HSM &amp; AES-256</strong>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroOverviewSection -->
+<!-- BEGIN: Section01TheChallenge -->
+<section class="py-20 border-t border-white/10 relative" data-purpose="business-problem-statement" id="challenge">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="mb-12">
+<span class="text-xs font-mono text-cyan-400 tracking-widest uppercase block mb-2">01 / TANTANGAN BISNIS &amp; MASALAH AWAL</span>
+<h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight">
+            Kendala Latensi, Protokol Terfragmentasi &amp; Resiko Selisih Kas
+          </h2>
+<p class="mt-3 text-sm sm:text-base text-slate-400 max-w-3xl">
+            Sebelum modernisasi arsitektur Dyoxa Tech, infrastruktur agregator terbebani oleh lonjakan transaksi di akhir bulan serta ketidaksesuaian protokol dari puluhan mitra biller utilitas nasional.
+          </p>
+</div>
+<!-- 3 Problem Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 01 -->
+<div class="rounded-2xl p-7 bg-[#181920] border border-white/10 hover:border-red-500/40 transition-all flex flex-col justify-between" data-purpose="problem-card">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-display font-bold text-red-400">01</span>
+<span class="px-2.5 py-1 rounded-md text-[10px] font-mono uppercase bg-red-950/40 text-red-400 border border-red-500/30">
+                  Peak Traffic Latency
+                </span>
+</div>
+<h3 class="text-lg font-bold text-white font-display mb-3">Lonjakan Trafik Jam Sibuk &amp; Time-out Biller</h3>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Saat periode gajian atau akhir bulan, ribuan request transaksi tagihan listrik (PLN) dan pulsa membanjiri sistem lama, menyebabkan antrean macet dan tingkat transaksi menggantung (<em>pending</em>) mencapai 18.4%.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5">
+<span class="inline-flex items-center gap-1.5 text-xs font-mono text-red-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                ⚠️ 18.4% Transaksi Menggantung Sebelumnya
+              </span>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="rounded-2xl p-7 bg-[#181920] border border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between" data-purpose="problem-card">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-display font-bold text-amber-400">02</span>
+<span class="px-2.5 py-1 rounded-md text-[10px] font-mono uppercase bg-amber-950/40 text-amber-400 border border-amber-500/30">
+                  Integration Bottleneck
+                </span>
+</div>
+<h3 class="text-lg font-bold text-white font-display mb-3">Kompleksitas Multi-Protokol Biller</h3>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Setiap biller penyedia layanan memiliki format integrasi berbeda (ISO 8583, XML RPC, SOAP, hingga REST API) tanpa standardisasi, menyulitkan ekspansi produk baru dan memperlambat debugging error.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5">
+<span class="inline-flex items-center gap-1.5 text-xs font-mono text-amber-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                ⏱️ 4-6 Minggu Integrasi Biller Baru
+              </span>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="rounded-2xl p-7 bg-[#181920] border border-white/10 hover:border-purple-500/40 transition-all flex flex-col justify-between" data-purpose="problem-card">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-display font-bold text-purple-400">03</span>
+<span class="px-2.5 py-1 rounded-md text-[10px] font-mono uppercase bg-purple-950/40 text-purple-400 border border-purple-500/30">
+                  Manual Reconciliation
+                </span>
+</div>
+<h3 class="text-lg font-bold text-white font-display mb-3">Selisih Kas &amp; Rekonsiliasi Manual Rumit</h3>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Ketidaksesuaian status transaksi antara agregator, bank, dan biller utama menuntut proses audit manual yang memakan waktu hingga H+3, mengunci likuiditas dana merchant dan menimbulkan komplain pengguna.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5">
+<span class="inline-flex items-center gap-1.5 text-xs font-mono text-purple-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                📉 Audit Manual Memakan Waktu 72 Jam
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section01TheChallenge -->
+<!-- BEGIN: Section02EngineeringSolution -->
+<section class="py-20 border-t border-white/10 bg-[#0a0a0d] relative" data-purpose="engineering-solutions" id="architecture">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="mb-14">
+<span class="text-xs font-mono text-cyan-400 tracking-widest uppercase block mb-2">02 / SOLUSI REKAYASA &amp; ARSITEKTUR SISTEM</span>
+<h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight">
+            High-Throughput Switch Engine &amp; Intelligent Biller Orchestration
+          </h2>
+<p class="mt-3 text-sm sm:text-base text-slate-400 max-w-3xl">
+            Dyoxa Tech membangun ulang fondasi arsitektur menjadi modular microservices terdistribusi dengan intelligent router cerdas dan automated double-entry ledger.
+          </p>
+</div>
+<!-- 2x2 Feature Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<!-- Card 1: Dynamic Smart Routing -->
+<div class="p-8 rounded-2xl bg-[#181920] border border-white/10 glow-border-cyan transition-all" data-purpose="solution-card">
+<div class="w-12 h-12 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-white font-display mb-3">Dynamic Smart Routing &amp; Auto-Failover Biller</h3>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Sistem routing cerdas berbasis status latensi riil biller. Jika salah satu server mitra biller mengalami kelambatan atau down, transaksi secara otomatis dialihkan ke jalur alternatif dalam 150ms tanpa disadari pengguna.
+            </p>
+<div class="flex flex-wrap gap-2 text-xs font-mono">
+<span class="px-2.5 py-1 rounded bg-cyan-950/40 text-cyan-400 border border-cyan-500/20">Multi-Route Fallback</span>
+<span class="px-2.5 py-1 rounded bg-white/[0.04] text-slate-300 border border-white/10">Health Check Probing 1s</span>
+</div>
+</div>
+<!-- Card 2: High-Throughput Queue -->
+<div class="p-8 rounded-2xl bg-[#181920] border border-white/10 glow-border-violet transition-all" data-purpose="solution-card">
+<div class="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-white font-display mb-3">High-Throughput Asynchronous Queue Engine</h3>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Implementasi message broker terdistribusi (Apache Kafka &amp; Redis) dengan kemampuan menangani lonjakan hingga 15.000 TPS (Transactions Per Second) tanpa terjadi race condition atau double debit saldo.
+            </p>
+<div class="flex flex-wrap gap-2 text-xs font-mono">
+<span class="px-2.5 py-1 rounded bg-purple-950/40 text-purple-400 border border-purple-500/20">15.000 TPS Capacity</span>
+<span class="px-2.5 py-1 rounded bg-white/[0.04] text-slate-300 border border-white/10">Zero Double Debit Guarantee</span>
+</div>
+</div>
+<!-- Card 3: Real-Time Double-Entry Ledger -->
+<div class="p-8 rounded-2xl bg-[#181920] border border-white/10 glow-border-cyan transition-all" data-purpose="solution-card">
+<div class="w-12 h-12 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-white font-display mb-3">Real-Time Double-Entry Ledger &amp; Instant Settlement</h3>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Buku besar digital terdesentralisasi yang mencatat setiap mutasi debit/kredit saldo secara atomik (ACID compliant). Dilengkapi auto-reconciliation engine yang mencocokkan mutasi kas biller secara otomatis setiap pergantian jam.
+            </p>
+<div class="flex flex-wrap gap-2 text-xs font-mono">
+<span class="px-2.5 py-1 rounded bg-cyan-950/40 text-cyan-400 border border-cyan-500/20">Atomic Balance Mutation</span>
+<span class="px-2.5 py-1 rounded bg-white/[0.04] text-slate-300 border border-white/10">Automated Hourly Settlement</span>
+</div>
+</div>
+<!-- Card 4: Multi-Protocol Adapter Framework -->
+<div class="p-8 rounded-2xl bg-[#181920] border border-white/10 glow-border-violet transition-all" data-purpose="solution-card">
+<div class="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-white font-display mb-3">Standardized Multi-Protocol Adapter Framework</h3>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Lapisan abstraksi mikroarsitektur yang mengonversi berbagai protokol legacy biller (ISO 8583, XML, SOAP) menjadi API RESTful/gRPC modern berkecepatan tinggi, memangkas integrasi mitra baru menjadi hitungan hari.
+            </p>
+<div class="flex flex-wrap gap-2 text-xs font-mono">
+<span class="px-2.5 py-1 rounded bg-purple-950/40 text-purple-400 border border-purple-500/20">ISO 8583 to JSON Engine</span>
+<span class="px-2.5 py-1 rounded bg-white/[0.04] text-slate-300 border border-white/10">Rapid Partner Onboarding</span>
+</div>
+</div>
+</div>
+<!-- Architectural Pipeline Banner -->
+<div class="rounded-2xl p-6 sm:p-8 bg-[#181920] border border-cyan-500/20 glow-border-cyan" data-purpose="architecture-diagram-panel">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+<div>
+<span class="text-xs font-mono text-cyan-400 uppercase tracking-wider block mb-1">DATA FLOW &amp; TRANSACTION PIPELINE</span>
+<h4 class="text-lg sm:text-xl font-bold text-white font-display">PPOB High-Concurrency Switch Pipeline</h4>
+</div>
+<span class="self-start md:self-auto px-3 py-1 rounded-full text-xs font-mono bg-cyan-950/70 text-cyan-300 border border-cyan-500/40">
+              Engine: Go-Micro &amp; Kafka Streaming
+            </span>
+</div>
+<!-- Flow steps visualization -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-6 font-mono text-xs">
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-center">
+<span class="text-cyan-400 block font-bold mb-1">01. INGEST</span>
+<span class="text-slate-300">Client App / Partner API</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-center">
+<span class="text-cyan-400 block font-bold mb-1">02. SECURITY</span>
+<span class="text-slate-300">Rate Limit &amp; Token HSM</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-center">
+<span class="text-cyan-400 block font-bold mb-1">03. QUEUE</span>
+<span class="text-slate-300">Kafka Event Stream</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-center">
+<span class="text-purple-400 block font-bold mb-1">04. ROUTING</span>
+<span class="text-slate-300">Dynamic Latency Probe</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-center">
+<span class="text-purple-400 block font-bold mb-1">05. ADAPTER</span>
+<span class="text-slate-300">ISO 8583 / REST Biller</span>
+</div>
+<div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-center">
+<span class="text-emerald-400 block font-bold mb-1">06. LEDGER</span>
+<span class="text-slate-300">Atomic Instant Clearing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section02EngineeringSolution -->
+<!-- BEGIN: Section03TechStack -->
+<section class="py-20 border-t border-white/10 bg-[#0e0e12]" data-purpose="tech-stack-section" id="techstack">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12 text-center md:text-left">
+<span class="text-xs font-mono text-cyan-400 tracking-widest uppercase block mb-2">03 / STACK TEKNOLOGI TERUJI</span>
+<h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight">
+            Infrastruktur Berkinerja Tinggi &amp; Tahan Skala Ekstrem
+          </h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Tech 1 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-cyan-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-cyan-400 transition-colors block">Go / Golang</span>
+<span class="text-[11px] font-mono text-cyan-400 block mt-1">High-Perf Microservices</span>
+<p class="text-[11px] text-slate-400 mt-2">Core Engine &amp; ISO Parser</p>
+</div>
+<!-- Tech 2 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-purple-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-purple-400 transition-colors block">Kafka &amp; Redis</span>
+<span class="text-[11px] font-mono text-purple-400 block mt-1">Event Streaming</span>
+<p class="text-[11px] text-slate-400 mt-2">Sub-ms Queue &amp; Lock</p>
+</div>
+<!-- Tech 3 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-cyan-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-cyan-400 transition-colors block">PostgreSQL</span>
+<span class="text-[11px] font-mono text-cyan-400 block mt-1">Double-Entry Ledger</span>
+<p class="text-[11px] text-slate-400 mt-2">ScyllaDB Audit Trail</p>
+</div>
+<!-- Tech 4 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-purple-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-purple-400 transition-colors block">Flutter &amp; Kotlin</span>
+<span class="text-[11px] font-mono text-purple-400 block mt-1">Mobile Native</span>
+<p class="text-[11px] text-slate-400 mt-2">Biometric &amp; POS Print</p>
+</div>
+<!-- Tech 5 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-cyan-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-cyan-400 transition-colors block">Docker &amp; K8s</span>
+<span class="text-[11px] font-mono text-cyan-400 block mt-1">AWS EKS Cluster</span>
+<p class="text-[11px] text-slate-400 mt-2">Multi-Zone Auto Scale</p>
+</div>
+<!-- Tech 6 -->
+<div class="p-5 rounded-xl bg-[#181920] border border-white/10 hover:border-purple-500/40 transition-all text-center group">
+<span class="text-lg font-bold font-display text-white group-hover:text-purple-400 transition-colors block">Vault &amp; HSM</span>
+<span class="text-[11px] font-mono text-purple-400 block mt-1">Cloudflare Zero-Trust</span>
+<p class="text-[11px] text-slate-400 mt-2">Hardware Key Security</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section03TechStack -->
+<!-- BEGIN: Section04MeasuredImpact -->
+<section class="py-20 border-t border-white/10 bg-[#0a0a0d] relative" data-purpose="impact-metrics-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12">
+<span class="text-xs font-mono text-cyan-400 tracking-widest uppercase block mb-2">04 / HASIL TERUKUR &amp; DAMPAK BISNIS</span>
+<h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight">
+            Metrik Transformasi Pasca-Implementasi
+          </h2>
+</div>
+<!-- Stat Callouts in 4 Columns -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stat 1 -->
+<div class="p-7 rounded-2xl bg-[#181920] border border-white/10 glow-border-cyan transition-all">
+<span class="text-4xl sm:text-5xl font-extrabold font-display text-cyan-400 block tracking-tight">99.999%</span>
+<h3 class="text-base font-bold text-white font-display mt-3 mb-1">Tingkat Keberhasilan Transaksi</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Lonjakan drastis dari sebelumnya 81.6%, berkat smart failover multi-biller.
+            </p>
+</div>
+<!-- Stat 2 -->
+<div class="p-7 rounded-2xl bg-[#181920] border border-white/10 glow-border-cyan transition-all">
+<span class="text-4xl sm:text-5xl font-extrabold font-display text-cyan-400 block tracking-tight">&lt; 420ms</span>
+<h3 class="text-base font-bold text-white font-display mt-3 mb-1">Rata-Rata Respon Transaksi</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Dari pengiriman request hingga SN/struk digital terbit dan saldo terpotong aman.
+            </p>
+</div>
+<!-- Stat 3 -->
+<div class="p-7 rounded-2xl bg-[#181920] border border-white/10 glow-border-violet transition-all">
+<span class="text-4xl sm:text-5xl font-extrabold font-display text-purple-400 block tracking-tight">15.000+</span>
+<h3 class="text-base font-bold text-white font-display mt-3 mb-1">Kapasitas TPS Puncak</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Telah teruji tahan beban saat flash sale pulsa, midnight bills, dan momen gajian.
+            </p>
+</div>
+<!-- Stat 4 -->
+<div class="p-7 rounded-2xl bg-[#181920] border border-white/10 glow-border-violet transition-all">
+<span class="text-4xl sm:text-5xl font-extrabold font-display text-purple-400 block tracking-tight">Rp 420M+</span>
+<h3 class="text-base font-bold text-white font-display mt-3 mb-1">Volume Transaksi / Bulan</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Memproses jutaan transaksi harian dari 85.000+ agen PPOB di seluruh Indonesia.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section04MeasuredImpact -->
+<!-- BEGIN: Section05ImplementationGallery -->
+<section class="py-20 border-t border-white/10 bg-[#0e0e12]" data-purpose="implementation-gallery">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12">
+<span class="text-xs font-mono text-cyan-400 tracking-widest uppercase block mb-2">05 / DOKUMENTASI IMPLEMENTASI &amp; GALERI UI</span>
+<h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight">
+            Tampilan Sistem Lapangan &amp; Pusat Pemantauan Transaksi
+          </h2>
+</div>
+<!-- 2 Column Grid Showcase -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Left Card: Mobile Interface with IMAGE_26 -->
+<div class="rounded-2xl overflow-hidden bg-[#181920] border border-white/10 glow-border-cyan flex flex-col justify-between" data-purpose="gallery-card">
+<div>
+<div class="relative aspect-[16/9] w-full bg-black overflow-hidden">
+<img alt="Close-up high-tech photography of modern fintech app interface on a smartphone held by an engineer in a dark tech command room" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtFIcxWZ-yXcAF4AprvldE_E1EAziG1hOnbAqLLt-676kcwF6GZqd-l-H2Dc1KACkCIYiI20k38dYBjZH8q-mV9rU1AawIBFOGBbYWvyXE_-kibxE_nngh72P6Hmvm9As1IBIVneHboUMslauQcu2aVh52GkdS1b7HLCX6MvEW9dXXQHapqT8p7hENGB96XMLKgXd0_LoJri9NnD_xwXJn38ojwRNH-DT7XPaZgycXq31fn-Dyik2kEw">
+</div>
+<div class="p-6">
+<span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-cyan-950/60 text-cyan-400 border border-cyan-500/30 inline-block mb-3">
+                  AGENT &amp; MERCHANT APP UI
+                </span>
+<h3 class="text-xl font-bold font-display text-white mb-2">
+                  Aplikasi Agen &amp; Kasir PPOB Mobile Antarmuka Responsif
+                </h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                  Desain UI aplikasi mobile modern dengan alur bayar instan 1-klik, scanner barcode tagihan cepat, cetak struk via bluetooth thermal printer, dan verifikasi biometrik.
+                </p>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2">
+<div class="flex items-center gap-3 text-xs font-mono text-slate-400 border-t border-white/5 pt-4">
+<span class="">📱 Flutter Engine 3.x</span>
+<span class="">•</span>
+<span class="">🖨️ ESC/POS Thermal Support</span>
+</div>
+</div>
+</div>
+<!-- Right Card: Monitoring Center with IMAGE_27 -->
+<div class="rounded-2xl overflow-hidden bg-[#181920] border border-white/10 glow-border-violet flex flex-col justify-between" data-purpose="gallery-card">
+<div>
+<div class="relative aspect-[16/9] w-full bg-black overflow-hidden">
+<img alt="Futuristic high-tech telecom and utility transaction monitoring center dashboard on multiple screens" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDInyRNwo-CDpxsBOqdxKuA-wzJSWynDDRnh7ehobXXrEJoLDuVjbaOPqVtbJMeXeazEtMZXaGRKKkkTejZC3Md-Ksxxq4w77oR4WktblbN9H5MGIKTEYYLHQhPcIPdMAYjIYR3wJ7U0UfO696VKMpxq2Vse_pDVkd0hURXXWuQPPwhsuvp8kmi1iPBpdFWDYFKBOXNqZYZLxzvt32-5N2_2k4_GPaunByTCHQxqRiXuNqjAtJC29Grfw">
+</div>
+<div class="p-6">
+<span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-purple-950/60 text-purple-400 border border-purple-500/30 inline-block mb-3">
+                  MISSION CONTROL &amp; NOC CONSOLE
+                </span>
+<h3 class="text-xl font-bold font-display text-white mb-2">
+                  NOC &amp; Pusat Pemantauan Transaksi Real-Time (Command Center)
+                </h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                  Konsol pemantauan latensi biller per detik, grafik throughput nasional, deteksi anomali kegagalan rute mitra, dan audit trail mutasi saldo terpusat.
+                </p>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2">
+<div class="flex items-center gap-3 text-xs font-mono text-slate-400 border-t border-white/5 pt-4">
+<span class="">🌐 Grafana &amp; Prometheus</span>
+<span class="">•</span>
+<span class="">⏱️ Real-time 1s Ping Interval</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section05ImplementationGallery -->
+<!-- BEGIN: TestimonialSection -->
+<section class="py-16 border-t border-white/10 bg-[#0a0a0d]" data-purpose="client-testimonial">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="rounded-2xl p-8 sm:p-10 bg-[#181920] border border-cyan-500/30 relative overflow-hidden shadow-2xl">
+<!-- Ambient Glow Corner -->
+<div class="absolute -top-16 -right-16 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+<svg class="w-10 h-10 text-cyan-400/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+</svg>
+<blockquote class="text-base sm:text-xl font-medium text-white leading-relaxed font-sans italic">
+            "Transformasi core engine PPOB oleh Dyoxa Tech menyelamatkan bisnis kami dari mimpi buruk lonjakan akhir bulan. Kini transaksi puluhan ribu agen berjalan mulus di bawah 1 detik tanpa pernah ada saldo gantung atau keluhan selisih kas lagi."
+          </blockquote>
+<div class="mt-8 flex items-center gap-4 pt-6 border-t border-white/10">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-cyan-500 to-purple-600 p-0.5">
+<div class="w-full h-full rounded-full bg-[#181920] flex items-center justify-center font-bold text-white font-mono">
+                FD
+              </div>
+</div>
+<div>
+<span class="block text-sm font-bold text-white font-display">Ferry Darmawan</span>
+<span class="block text-xs font-mono text-cyan-400">Director of Technology &amp; Infrastructure, PT Jaringan Pembayaran Nusantara</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TestimonialSection -->
+<!-- BEGIN: ConsultationCTASection -->
+<section class="py-20 border-t border-white/10 bg-[#0e0e12] relative" data-purpose="cta-consultation-section" id="contact">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-b from-[#181920] to-[#121318] border border-cyan-500/30 shadow-2xl relative">
+<div class="text-center mb-8">
+<span class="px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-cyan-950/60 text-cyan-400 border border-cyan-500/30 inline-block mb-3">
+              MULAI KOLABORASI FINTECH
+            </span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-white">
+              Siap Membangun Arsitektur Transaksi FinTech &amp; PPOB yang Tangguh?
+            </h2>
+<p class="mt-3 text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+              Diskusikan kebutuhan engine switching pembayaran, koneksi multi-biller, atau modernisasi sistem transaksi finansial bersama tim senior engineer Dyoxa Tech.
+            </p>
+</div>
+<!-- Consultation Form -->
+<form class="space-y-4" onsubmit="sendToWhatsApp(event, this)">
+<div>
+<label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Nama Lengkap</label>
+<input class="w-full rounded-xl bg-[#0e0e12] border border-white/10 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all font-sans" placeholder="cth. Budi Santoso" required="" type="text">
+</div>
+<div>
+<label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Email Perusahaan / Bisnis</label>
+<input class="w-full rounded-xl bg-[#0e0e12] border border-white/10 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all font-sans" placeholder="budi@perusahaan-fintech.id" required="" type="email">
+</div>
+<div>
+<label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Estimasi Volume Transaksi</label>
+<select class="w-full rounded-xl bg-[#0e0e12] border border-white/10 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all font-sans">
+<option value="tier1">&lt; 50.000 trx/hari (Startup / Scale-up)</option>
+<option value="tier2">50.000 - 500.000 trx/hari (Mid Growth)</option>
+<option value="tier3">&gt; 500.000 trx/hari / Skala Enterprise Nasional</option>
+</select>
+</div>
+<button class="w-full py-3.5 px-6 rounded-xl font-display font-bold text-sm tracking-wide text-black bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-500 hover:opacity-95 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 mt-2" type="submit">
+              Jadwalkan Konsultasi Teknis &amp; Demo Engine →
+            </button>
+</form>
+<p class="mt-4 text-center text-xs font-mono text-slate-400">Atau hubungi kami via <a href="https://wa.me/6281368413333" target="_blank" rel="noopener" class="text-cyan-400 hover:underline">WhatsApp 0813 6841 3333</a></p>
+<!-- Security Badges Checklist -->
+<div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-[11px] font-mono text-slate-400 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<span class="text-cyan-400">✓</span> Audit Arsitektur Gratis
+            </div>
+<div class="flex items-center justify-center gap-1.5">
+<span class="text-cyan-400">✓</span> Desain Failover Biller
+            </div>
+<div class="flex items-center justify-center gap-1.5">
+<span class="text-cyan-400">✓</span> NDA &amp; SLA Terjamin
+            </div>
+</div>
+<div class="text-center mt-4">
+<span class="text-xs text-slate-500 font-mono">
+              Atau kontak langsung via email: <a class="text-cyan-400 hover:underline" href="mailto:Care@dyoxa.net">Care@dyoxa.net</a>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ConsultationCTASection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="border-t border-white/10 bg-[#0a0a0d] py-12" data-purpose="page-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-purple-600 p-0.5 flex items-center justify-center overflow-hidden"><div class="w-full h-full bg-[#0e0e12] rounded-[6px] flex items-center justify-center overflow-hidden p-1"><img src="../Dyoxa%20logo.jpeg" alt="Dyoxa Tech Logo" class="w-full h-full object-contain"></div></div>
+<div>
+<span class="font-display font-bold text-white tracking-wide text-sm block">Dyoxa Tech</span>
+<span class="text-[11px] text-slate-500">Next-generation fintech software engineering &amp; digital switch architecture</span>
+</div>
+</div>
+<div class="flex items-center gap-6 text-xs font-mono text-slate-400">
+<a class="hover:text-cyan-400 transition-colors" href="#overview">Beranda</a>
+<a class="hover:text-cyan-400 transition-colors" href="#challenge">Portofolio</a>
+<a class="hover:text-cyan-400 transition-colors" href="#architecture">Layanan</a>
+<a class="hover:text-cyan-400 transition-colors" href="#contact">Kebijakan Privasi</a>
+</div>
+<div class="flex items-center gap-3 text-xs font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-slate-400">Core Switch Nodes Operational</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5 text-center text-xs font-mono text-slate-600">
+        © 2025 Dyoxa Tech. Seluruh hak cipta dilindungi undang-undang.
+      </div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+
+
+
+<script>
+  document.querySelectorAll('img').forEach((image, index) => {
+    image.decoding = 'async';
+    if (index > 0 && !image.loading) image.loading = 'lazy';
+  });
+
+  document.querySelectorAll('img[alt="Dyoxa Tech Logo"]').forEach(logo => {
+    logo.src = '../Dyoxa%20logo.jpeg';
+  });
+
+  const standardProjectHeader = document.querySelector('header');
+  if (standardProjectHeader) {
+    standardProjectHeader.className = 'sticky top-0 z-50 backdrop-blur-xl bg-[#0e0e12]/85 border-b border-white/10';
+    standardProjectHeader.innerHTML = `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <a class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors py-1.5 px-3 rounded-lg border border-white/10 hover:border-cyan-500/40 bg-white/[0.02]" href="../dyoxa_tech_software_house_digital_agency/code.html#portofolio">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          Kembali ke Portofolio
+        </a>
+        <div class="h-6 w-px bg-white/10 hidden sm:block"></div>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20 overflow-hidden"><div class="w-full h-full bg-[#0e0e12] rounded-[10px] flex items-center justify-center overflow-hidden p-1"><img src="../Dyoxa%20logo.jpeg" alt="Dyoxa Tech Logo" class="w-full h-full object-contain"></div></div>
+          <div><span class="font-display font-bold text-white text-base tracking-wide">Dyoxa <span class="text-cyan-400">Tech</span></span><span class="hidden sm:inline-block ml-2 px-2 py-0.5 rounded text-[10px] font-mono font-medium tracking-wider bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">CASE STUDY</span></div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4"><a href="#contact" class="px-5 py-2 rounded-lg text-sm font-medium font-display text-[#0e0e12] bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 transition-all shadow-lg shadow-cyan-500/25">Konsultasi Proyek Serupa</a></div>
+    </div>`;
+  }
+
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.cssText = 'position:fixed;right:24px;bottom:24px;z-index:100;max-width:calc(100vw - 32px);padding:14px 18px;border:1px solid rgba(34,211,238,.45);border-radius:12px;background:rgba(14,14,18,.96);color:#e2e8f0;font:500 14px/1.4 Inter,sans-serif;box-shadow:0 0 24px rgba(6,182,212,.25);opacity:0;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => { toast.style.opacity = '1'; toast.style.transform = 'translateY(0)'; });
+    setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateY(12px)'; setTimeout(() => toast.remove(), 250); }, 3500);
+  }
+
+  function sendToWhatsApp(event, form) {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const fields = Array.from(form.querySelectorAll('input, textarea, select'))
+      .filter(field => field.value.trim())
+      .map(field => `${field.previousElementSibling?.textContent?.trim() || field.placeholder || field.name || 'Detail'}: ${field.value.trim()}`);
+    const message = [`Halo Dyoxa Tech, saya ingin berkonsultasi.`, `Halaman: ${document.title}`, '', ...fields].join('\n');
+    window.open(`https://wa.me/6281368413333?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    showToast('Form berhasil dikirim. WhatsApp sedang dibuka dengan pesan Anda.');
+  }
+</script>
+<style>
+  main p, footer p { text-align: justify; }
+</style>
+</body></html>
