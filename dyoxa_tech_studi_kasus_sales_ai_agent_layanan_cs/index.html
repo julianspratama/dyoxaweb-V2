@@ -665,7 +665,7 @@
     standardProjectHeader.className = 'sticky top-0 z-50 backdrop-blur-xl bg-[#0e0e12]/85 border-b border-white/10';
     standardProjectHeader.innerHTML = `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-5">
-        <a class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors py-1.5 px-3 rounded-lg border border-white/10 hover:border-cyan-500/40 bg-white/[0.02]" href="../dyoxa_tech_software_house_digital_agency/code.html#portofolio">
+        <a class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors py-1.5 px-3 rounded-lg border border-white/10 hover:border-cyan-500/40 bg-white/[0.02]" href="../index.html#portofolio">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
           Kembali ke Portofolio
         </a>
@@ -735,7 +735,7 @@
 
 <script>
   document.querySelectorAll('[data-path="portofolio"]').forEach(link => {
-    link.href = '../dyoxa_tech_software_house_digital_agency/code.html#portofolio';
+    link.href = '../index.html#portofolio';
   });
   document.querySelectorAll('[data-path="beranda"]').forEach(link => {
     document.body.id = 'ai-page-top';
@@ -746,14 +746,14 @@
   });
   document.querySelectorAll('a[href="#"]').forEach(link => {
     const label = link.textContent.trim().toLowerCase();
-    if (label.includes('portofolio')) link.href = '../dyoxa_tech_software_house_digital_agency/code.html#portofolio';
+    if (label.includes('portofolio')) link.href = '../index.html#portofolio';
     if (label === 'beranda') link.href = '#ai-page-top';
   });
   document.querySelectorAll('footer nav a').forEach(link => {
     const label = link.textContent.trim().toLowerCase();
     if (label === 'beranda') link.href = '#ai-page-top';
-    if (label === 'portofolio') link.href = '../dyoxa_tech_software_house_digital_agency/code.html#portofolio';
-    if (label === 'layanan') link.href = '../dyoxa_tech_software_house_digital_agency/code.html#layanan';
+    if (label === 'portofolio') link.href = '../index.html#portofolio';
+    if (label === 'layanan') link.href = '../index.html#layanan';
     if (label === 'kontak') link.href = '#ai-demo-form';
   });
 </script>
